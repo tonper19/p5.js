@@ -1,4 +1,6 @@
-// function setup() {
+// The Coding train 
+// https://www.youtube.com/playlist?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX
+//   function setup() {
 //   createCanvas(800, 900);
 //   print("hello");
 //   background(0);
@@ -19,7 +21,7 @@
 
 
 
-// 23/01/23
+// 23/01/2023 
 
 // let circleX = 100;
 
@@ -62,6 +64,12 @@ function draw() {
   stroke(0, 0, 255, 10);
   fill(0, 255, 0, 10);
   square(200, 150, squareSize);
+}
+
+// 8.2 Creating HTML elements with Javascript
+function mousePressed() {
+  //createP("My favorite color is red");
+  createElement("p", "My name is Miguel");
 }
 
 
