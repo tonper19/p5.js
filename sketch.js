@@ -98,65 +98,116 @@
 
 
 // 8.4 Handling DOM events with Callbacks
-let bgcolor;
-let button1;
-let button2;
+// 8.5 Interacting with the DOM using sliders, buttons 
+// let bgcolor;
+// let button1;
+// let button2;
+// let slider;
+// let nameInput;
+// let nameP;
+
+// function setup() {
+//   canvas = createCanvas(200, 200);
+//   bgcolor = color(200);
+//   nameP = createP("Your name!");
+//   button1 = createButton("go go go go");
+//   button1.mousePressed(changeColor);
+//   button2 = createButton("Empty field");
+//   slider = createSlider(10, 100, 47);
+//   nameInput = createInput("type your name");
+//   nameP.mouseOver(overpara);
+//   nameP.mouseOut(outpara);
+
+//   nameInput.changed(updateText);
+//   nameInput.input(updateText);
+  
+// }
+
+// function updateText() {
+//   nameP.html(nameInput.value());
+// }
+
+// function overpara() {
+//   nameP.html("Your mouse is over me!");
+// }
+
+// function outpara() {
+//   nameP.html("Your mouse is out!");
+// }
+
+// function changeColor() {
+//   bgcolor = color(random(255));
+// }
+
+// function mousePressed(){
+//   //bgcolor = color(random(255));
+//   changeColor();
+// }
+
+// function draw() {
+//   background(bgcolor);
+//   fill(255, 0, 175);
+//   ellipse(100, 100, slider.value(), slider.value());
+//   //nameP.html(input.value());
+//   //text(nameInput.value(), 10, 20);
+// }
+
+
+
+
+// 8.7
+// let bgcolor;
+// let button;
+// let txt;
+
+// function setup() {
+//   createCanvas(200, 200);
+//   bgcolor = color(51);
+//   txt = createP("some text");
+//   txt.mouseOver(changeStyle)
+//   txt.mouseOut(revertStyle)
+//   button = createButton("Go");
+// }
+
+// // function draw() {
+// //   background(bgcolor);
+// //   fill(255, 0, 175);
+// //   ellipse(100, 100, 50, 50);
+// // }
+
+// function changeStyle() { // BUT HOW DOES IT KNOW WICH TXT TO EDIT?? // 8.7 14:00
+//   txt.style("background-color", "pink")
+//   txt.style("padding", "24px")
+// }
+
+// function revertStyle() {
+//   txt.style("background-color", "purple");
+//   txt.style("padding", "8px");
+
+// }
+ 
+// 8.8
+
+let textbox;
 let slider;
-let nameInput;
-let nameP;
+let paragraph;
 
 function setup() {
-  canvas = createCanvas(200, 200);
-  bgcolor = color(200);
-  nameP = createP("Your name!");
-  button1 = createButton("go go go go");
-  button1.mousePressed(changeColor);
-  button2 = createButton("Empty field");
-  slider = createSlider(10, 100, 47);
-  nameInput = createInput("type your name");
-  nameP.mouseOver(overpara);
-  nameP.mouseOut(outpara);
+  noCanvas();
+  paragraph = createP("starting text");
+  textbox = createInput("enter text");
+  slider = createSlider(10, 64, 16);
 
-  nameInput.changed(updateText);
-  nameInput.input(updateText);
-  
+  textbox.changed(updateText);
+  slider.input(updateSize);
+}
+
+function updateSize() {
+  paragraph.style("font-size", slider.value() + "pt");  
 }
 
 function updateText() {
-  nameP.html(nameInput.value());
+  paragraph.html(textbox.value());
 }
-
-function overpara() {
-  nameP.html("Your mouse is over me!");
-}
-
-function outpara() {
-  nameP.html("Your mouse is out!");
-}
-
-function changeColor() {
-  bgcolor = color(random(255));
-}
-
-function mousePressed(){
-  //bgcolor = color(random(255));
-  changeColor();
-}
-
-function draw() {
-  background(bgcolor);
-  fill(255, 0, 175);
-  ellipse(100, 100, slider.value(), slider.value());
-  //nameP.html(input.value());
-  //text(nameInput.value(), 10, 20);
-}
-
-
-// 8.5 Interacting with the DOM using sliders, buttons 
-
-
-
-
-
 
 
