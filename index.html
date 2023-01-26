@@ -26,13 +26,27 @@
       padding: 8px;
     }
   </style> -->
+  <style>
+    #planes  { /* but what if you have multiple id with the same name? */
+      font-size: 48pt;
+    }
+
+    .Cars{
+      background-color: #f0f;
+    }
+
+    p {
+      padding: 16pt;
+    }
+  </style>
 </head>
 
 <body>
   <main>
-    <h1>I am making a video</h1>
-    <p>This is my essay about how i love to make videos. They are my favorite
-      thing to do </p>
+    <p id="Cars" class="planes">Planes!</p>
+    <p class="Cars">Cars!</p>
+    <p class="Cars">More cars!</p>
+    <p>Just a plain paragraph.</p>
   </main>
 </body>
 

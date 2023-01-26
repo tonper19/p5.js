@@ -188,26 +188,30 @@
  
 // 8.8
 
-let textbox;
-let slider;
-let paragraph;
+// let textbox;
+// let slider;
+// let paragraph;
 
-function setup() {
-  noCanvas();
-  paragraph = createP("starting text");
-  textbox = createInput("enter text");
-  slider = createSlider(10, 64, 16);
+// function setup() {
+//   noCanvas();
+//   paragraph = createP("starting text");
+//   textbox = createInput("enter text");
+//   slider = createSlider(10, 64, 16);
 
-  textbox.changed(updateText);
-  slider.input(updateSize);
-}
+//   textbox.changed(updateText);
+//   slider.input(updateSize);
+// }
 
-function updateSize() {
-  paragraph.style("font-size", slider.value() + "pt");  
-}
+// function updateSize() {
+//   paragraph.style("font-size", slider.value() + "pt");  
+// }
 
-function updateText() {
-  paragraph.html(textbox.value());
-}
+// function updateText() {
+//   paragraph.html(textbox.value());
+// }
+
+
+// 8.9
+
 
 
