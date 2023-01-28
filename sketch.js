@@ -211,7 +211,194 @@
 // }
 
 
-// 8.9
+
+
+// 8.11 callbacks on multiple elements 
+
+// let paragraphs;
+// let buttons;
+// let h1;
+
+// //let paragraph;
+
+// function setup() {
+//     createCanvas(100, 100);
+//     background(0);
+
+//     // paragraphs = select("#unicorn");
+//     // paragraphs.mouseOver(highlight);
+//     // paragraphs.mouseOut(unhighlight);
+
+//     for (let index = 0; index < 50; index++) {
+//         let par = createP("rainbow!");
+//         par.position(random(500), (500));
+//     }
+
+
+//     paragraphs = selectAll("p");
+
+//     for (let index = 0; index < paragraphs.length; index++) {
+//         paragraphs[index].mouseOver(highlight);
+//         paragraphs[index].mouseOut(unhighlight);
+//     }
+
+//     buttons = selectAll("button");
+
+//     for (let index = 0; index < buttons.length; index++) {
+//         buttons[index].mouseOver(highlight);
+//         buttons[index].mouseOut(unhighlight);
+//     }
+//     h1 = selectAll("h1");
+
+//     for (let index = 0; index < h1.length; index++) {
+//         h1[index].mouseOver(highlight);
+//         h1[index].mouseOut(unhighlight);
+//     }
+
+// }
+
+// function highlight() {
+//     this.style("padding", "16pt")
+//     this.style("background-color", "#F0F");
+// }
+
+// function unhighlight() {
+//     this.style("padding", "0pt");
+//     this.style("background-color", "#FFF");
+// }
+
+
+//8.12
+
+
+// let happy = ["rainbow", "unicorn", "purple", "bacteria"]
+
+// function setup(){
+//     noCanvas();
+
+//     let button = select("#button");
+//     button.mousePressed(addItem);
+// }
+
+// function addItem() {
+//     let r = floor(random(0,happy.length));
+//     createElement("li", happy[r]);
+//     li.parent("happylist") 
+// }
+
+
+
+// 8.13 assigning a CSS Clas dynamically
+
+// function setup(){
+//     for (let index = 0; index < 100; index++) {
+//         let p = createA("#", "apples");
+//         let x = floor(random(windowWidth));
+//         let y = floor(random(windowHeight));
+//         p.position(x, y);
+//         p.class("apple");
+//     }
+
+//     for (let index = 0; index < 100; index++) {
+//         let p = createA("#", "blueberries");
+//         let x = floor(random(windowWidth));
+//         let y = floor(random(windowHeight));
+//         p.position(x, y);
+//         p.class("blueberry")
+//         p.mousePressed("becomeApple");
+//     }
+    
+
+// }
+
+// function becomeApple() {
+//     println("this is happenning");
+//     this.removeClass("blueberry")
+//     this.class("apple");
+// }
+
+// 8.14 parent and child again with variables 
+// let images = [];
+
+// function setup() {
+//     noCanvas();
+//     for (let index = 0; index < 5; index++) {
+//     let p = createP("this is a link: ");
+//     p.style("background-color", "#CCC")
+//     p.style("padding", "24px");
+
+//     let a = createA("#", "apples");
+//     a.mousePressed(addPhoto);
+//     a.parent(p);
+//     }
+
+//     let button = select("#clear");
+//     button.mousepressed(clearStuff);
+// }
+
+// function clearStuff() {
+//     for (let index = 0; index < images.length; index++) {
+//         images[i].remove();
+//     }
+//     images = [];
+// }
+
+
+// function addPhoto() {
+//     let img = createImg("apples2.jpg");
+//     images.push(img);
+//     img.size(100, 100);
+
+//     let paragraph = this.parent();
+
+//     img.parent(paragraph);
+// }
+
+//8.15 drag and drop a file
+// function setup() {
+//     let canvas = createCanvas(300, 300);
+//     background(0);
+//     canvas.drop(gotFile);
+// }
+
+// function gotFile(file) {
+//     createP("file name: " + file.name + " size:" + file.size);
+//     let img = createImg(file.data, '');
+//     img.size(100, 100);
+// }
+
+//8.16 the slider dance 
+let sliders = [];
+let angle = 0;
+function setup() {
+    noCanvas();
+    for (let index = 0; index < 500; index++) {
+        sliders[index] = createSlider(0, 255, 50);   
+    }
+    sliders[0].input(adjustSliders);
+}
+
+// function draw(){
+
+//     let offset = 0;
+//     for (let index = 0; index < sliders.length; index++) {
+//         let x = map(sin(angle+offset), -1, 1, 0, 255);
+//         sliders[index].value(x);
+//         offset +=0.25;
+//     }
+//     angle += 0.1;
+// }
+
+function adjustSliders(){
+     for (let index = 1; index < sliders.length; index++) {
+        sliders[index].value(sliders[0].value());
+     }
+}
+
+
+
+
+
 
 
 
