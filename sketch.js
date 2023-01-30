@@ -368,32 +368,32 @@
 // }
 
 //8.16 the slider dance 
-let sliders = [];
-let angle = 0;
-function setup() {
-    noCanvas();
-    for (let index = 0; index < 500; index++) {
-        sliders[index] = createSlider(0, 255, 50);   
-    }
-    sliders[0].input(adjustSliders);
-}
-
-// function draw(){
-
-//     let offset = 0;
-//     for (let index = 0; index < sliders.length; index++) {
-//         let x = map(sin(angle+offset), -1, 1, 0, 255);
-//         sliders[index].value(x);
-//         offset +=0.25;
+// let sliders = [];
+// let angle = 0;
+// function setup() {
+//     noCanvas();
+//     for (let index = 0; index < 500; index++) {
+//         sliders[index] = createSlider(0, 255, 50);   
 //     }
-//     angle += 0.1;
+//     sliders[0].input(adjustSliders);
 // }
 
-function adjustSliders(){
-     for (let index = 1; index < sliders.length; index++) {
-        sliders[index].value(sliders[0].value());
-     }
-}
+// // function draw(){
+
+// //     let offset = 0;
+// //     for (let index = 0; index < sliders.length; index++) {
+// //         let x = map(sin(angle+offset), -1, 1, 0, 255);
+// //         sliders[index].value(x);
+// //         offset +=0.25;
+// //     }
+// //     angle += 0.1;
+// // }
+
+// function adjustSliders(){
+//      for (let index = 1; index < sliders.length; index++) {
+//         sliders[index].value(sliders[0].value());
+//      }
+// }
 
 
 
